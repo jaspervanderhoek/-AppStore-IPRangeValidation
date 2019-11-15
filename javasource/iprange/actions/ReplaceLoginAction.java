@@ -23,14 +23,14 @@ public class ReplaceLoginAction extends CustomJavaAction<java.lang.Boolean>
 		super(context);
 	}
 
-	@Override
+	@java.lang.Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
 		// BEGIN USER CODE
 		LoginActionListener loginActionListener = new LoginActionListener();
 		loginActionListener.addReplaceEvent(IPRangeCheckerLoginAction.class.getName());
 		Core.addUserAction(IPRangeCheckerLoginAction.class);
-		Core.addListener(loginActionListener);
+		Core.getListenersRegistry().addListener(loginActionListener);
 		
 		return true;
 		// END USER CODE
@@ -39,7 +39,7 @@ public class ReplaceLoginAction extends CustomJavaAction<java.lang.Boolean>
 	/**
 	 * Returns a string representation of this action
 	 */
-	@Override
+	@java.lang.Override
 	public java.lang.String toString()
 	{
 		return "ReplaceLoginAction";

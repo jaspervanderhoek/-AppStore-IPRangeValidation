@@ -88,7 +88,7 @@ public class IPRangeCheckerLoginAction extends UserAction<ISession>
 		userSessionRange.setValue(sessionContext, SessionIPRange.MemberNames.SessionIPRange_IPAddressRange.toString(), matchingIPRanges);
 		userSessionRange.setValue(sessionContext, SessionIPRange.MemberNames.SessionIPRange_Session.toString(),
 				(session.getMendixObject() != null ? session.getMendixObject().getId() : null));
-		userSessionRange.setValue(sessionContext, SessionIPRange.MemberNames.SessionIPRange_User.toString(), session.getUser().getMendixObject().getId());
+		userSessionRange.setValue(sessionContext, SessionIPRange.MemberNames.SessionIPRange_User.toString(), session.getUserId());
 		
 		userSessionRange.setValue(sessionContext, SessionIPRange.MemberNames.RemoteAddress.toString(), remoteAddress);
 		userSessionRange.setValue(sessionContext, SessionIPRange.MemberNames.XForwardedIP.toString(), forwardedFor);
