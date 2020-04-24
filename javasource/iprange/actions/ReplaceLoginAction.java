@@ -32,6 +32,10 @@ public class ReplaceLoginAction extends CustomJavaAction<java.lang.Boolean>
 		Core.addUserAction(IPRangeCheckerLoginAction.class);
 		Core.getListenersRegistry().addListener(loginActionListener);
 		
+		IPRangeCheckerLoginAction.setupRulesForAllRoles();
+		
+		Core.getLogger("IPCheck").info("IP Range Check Initialized, standard login replaced with IP Range Validated Login");
+		
 		return true;
 		// END USER CODE
 	}
